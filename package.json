@@ -1,0 +1,30 @@
+{
+  "name": "rlarroque - personal-website",
+  "version": "0.0.0",
+  "description": "A project including Jekyll, GulpJS, SASS & BrowserSync",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rlarroque",
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rlarroque/personal-website.git"
+  },
+  "keywords": [
+    "jekyll",
+    "gulp",
+    "sass",
+    "browsersync"
+  ],
+  "bugs": {
+    "url": "https://github.com/rlarroque/personal-website/issues"
+  },
+  "homepage": "https://github.com/rlarroque/personal-website"
+}
