@@ -2,8 +2,4 @@
 @import "0-tools/normalize";
 @import "0-tools/vars";
 
-@import "1-base/base";
-
-body {
-  background: yellow;
-}
+@import "2-modules/header"
