@@ -4,45 +4,131 @@ header
 
   .nav-container
     display: block
-    height: 100%
-    padding: 0 30px 0 30px
+    height: 40px
+    padding: 15px 50px 15px 50px
     position: relative
     max-width: 1260px
     margin: 0 auto
 
-    .nav-list
-      list-style: none
-      text-align: right
+  .nav-list
+    display: inline-block
+    list-style: none
+    text-align: right
+    position: relative
+    margin: 0 auto
+    width: 100%
+    padding: 0
+
+    li
+      display: inline-block
+      margin-left: 20px
+      line-height: 40px
       position: relative
-      margin: 0 auto
+
+      &:first-child
+        margin-left: 0
+        padding-left: 0
+
+      &:last-child
+        margin-right: 0
+        padding-right: 0
+
+      .nav-link
+        text-decoration: none
+        color: #7b8b8e
+        font-weight: 500
+
+  .mobile-nav-list
+    display: none
+    width: 100px
+    height: 100vh
+    list-style: none
+    text-align: right
+    margin-top: 15px
+    padding-top: 10px
+    background: white
+    position: absolute
+    right: 0
+
+    transform: translateX(100%)
+    transition: all 0.3s ease-in-out
+
+    li
+      display: block
+      text-align: left
+      line-height: 50px
+      margin-left: 0
+      padding-left: 0
+
+      .nav-link
+        text-decoration: none
+        color: #7b8b8e
+        font-weight: 500
+
+  .logo-container
+    +hide-text
+    background:
+      image: url(/assets/img/logo-rl.svg)
+      repeat: no-repeat
+      position: center
+      size: contain
+    position: absolute
+    left: 0px
+    margin: 0 0 0 50px
+    display: flex
+    height: 40px
+    width: 40px
+
+  .mobile-nav-toggle
+    width: 40px
+    height: 40px
+    display: none
+    align-items: center
+    cursor: pointer
+
+    span,
+    span:before,
+    span:after
+      position: relative
+      content: ""
+      height: 2px
+      display: block
       width: 100%
-      padding: 0
+      background: #333
 
-      li
-        display: inline-block
-        margin-left: 20px
-        line-height: 70px
-        position: relative
+      transition: all 0.3s ease-in-out
 
-        &:first-child
-          margin-left: 0
-          padding-left: 0
+    span::before
+      top: -16px
 
-        &:last-child
-          margin-right: 0
-          padding-right: 0
+    span::after
+      top: 14px
 
-        .nav-link
-          display: inline-block
-          text-decoration: none
-          color: #7b8b8e
-          font-weight: 500
+    &.is-open span
+      background: transparent
 
-  // .logo
-  //   +hide-text
-  //   background:
-  //     image: url(/assets/img/logo-rl.svg)
-  //     repeat: no-repeat
-  //     size: contain
-  //   position: absolute
-  //   left: 0
+    &.is-open span:before,
+    &.is-open span:after
+      transform-origin: center
+      transform: rotate(-45deg)
+      top: 0
+
+    &.is-open span::before
+      transform: rotate(45deg)
+      top: 2px
+
+
+@media (max-width:750px)
+  header
+
+    .nav-list
+      display: none
+
+    .mobile-nav-list.is-open
+      display: inline-block
+      transform: translateX(0%)
+
+    .mobile-nav-toggle
+      display: flex
+      position: relative
+      margin-left: auto
